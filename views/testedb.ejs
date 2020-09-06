@@ -1,0 +1,35 @@
+<%- include layout/header.ejs %>
+
+<div class="container-fluid px-3 py-0">
+
+    <div class="bd-default">
+
+        <div class="d-flex flex-wrap flex-row bd-highlight justify-content-start mb-3">
+
+            <% for (let s of rs) { %> 
+            <div class="p-2 bd-highlight">
+                <div class="card" style="width: 18rem;">
+                    <h5 class="card-header">
+                        <%= s.code %>
+                    </h5>
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <%= s.type %>
+                      </h5>
+                      <p class="card-text">            
+                        <%= s.classification %> /
+                        <%= s.identy %> /
+                        <%= s.objective %> /
+                        <%= s._id %>
+                      </p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+
+    </div>
+</div>
+
+<%- include layout/footer.ejs %>
