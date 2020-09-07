@@ -1,12 +1,8 @@
 const mongoose = require("mongoose");
 
-const schemaOptions = {
-  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' },
-}
-
 const stockSchema = new mongoose.Schema(
   {
-    _id: String,
+    // _id: String,
     classification: {
       type: String,
       required: true
@@ -28,7 +24,9 @@ const stockSchema = new mongoose.Schema(
       required: true
     },
   },
-  schemaOptions,
+  {
+    timestamps: true
+  },
   {
       collection: 'stocks'
   }

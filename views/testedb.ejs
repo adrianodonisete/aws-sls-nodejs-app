@@ -3,6 +3,9 @@
 <div class="container-fluid px-3 py-0">
 
     <div class="bd-default">
+      <% if (error != undefined && error.status != '') { %>
+        <h3 class="alert alert-danger"><%= error.message %></h3>
+      <% } %>
 
         <div class="d-flex flex-wrap flex-row bd-highlight justify-content-start mb-3">
 
@@ -20,7 +23,9 @@
                         <%= s.classification %> /
                         <%= s.identy %> /
                         <%= s.objective %> /
-                        <%= s._id %>
+                        <a href="http://localhost:3000/db/by_id/<%= s._id %>" target="_blank" rel="noopener noreferrer">
+                          <%= s._id %>
+                        </a>
                       </p>
                     </div>
                 </div>

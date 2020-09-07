@@ -9,10 +9,16 @@ http://localhost:3000/db/addtime
 router.get('/addtime', testedbController.addTimestamps);
 
 http://localhost:3000/db/all
-router.get('/all', testedbController.getAll);
+router.get('/all', testedbController.all);
+
+http://localhost:3000/db/list
+router.get('/list', testedbController.allHtml);
 
 http://localhost:3000/db/one/acao05
-router.get('/one/:identity', testedbController.getOne);
+router.get('/one/:identity', testedbController.one);
+
+http://localhost:3000/db/by_id/5f55113e5ecf292f68032606
+router.get('/by_id/:_id', testedbController.oneById);
 
 
 router.get('/teste2', function(req, res, next) {
