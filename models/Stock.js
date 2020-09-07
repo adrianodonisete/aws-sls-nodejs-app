@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 
+const schemaOptions = {
+  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' },
+}
+
 const stockSchema = new mongoose.Schema(
   {
     _id: String,
@@ -23,11 +27,11 @@ const stockSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+  },
+  schemaOptions,
+  {
+      collection: 'stocks'
   }
-//   ,
-//   {
-//     timestamps: true
-//   }
 );
 
 module.exports = mongoose.model("stocks", stockSchema);
